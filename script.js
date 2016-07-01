@@ -24,7 +24,7 @@ for (var i = 0; i < suits.length; i++) {
     }
 }
 console.log(deck)
-// for (var i = 0; i <= 52; i++) {
+    // for (var i = 0; i <= 52; i++) {
 
 //     var num = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
 //     var value = num[Math.floor(Math.random() * num.length)];
@@ -45,7 +45,7 @@ function deal() {
         yourHand.push(deck[h]);
     }
 
-    for (var x = 27; x < 53; x++) {
+    for (var x = 26; x < 52; x++) {
         compHand.push(deck[x]);
     }
 
@@ -76,21 +76,27 @@ function rand(min, max) {
 }
 
 
-function win() {
-    var win = new Promise(
-        function win() {
-            yourHand.push(compHand[cCard])
-        }
-    )
-    win.then(
-        compHand.splice(cCard, 1),
-        console.log("promise worked")
-    )
-}
+
 
 function fire() {
     var hCard = rand(0, yourHand.length - 1);
     var cCard = rand(0, compHand.length - 1);
+
+    function win() {
+        compHand.splice(cCard, 1)
+        yourHand.push(compHand[cCard])
+        console.log("you win")
+        console.log(yourHand)
+        console.log(compHand)
+    }
+
+    function lose() {
+        yourHand.splice(hCard, 1)
+        compHand.push(yourHand[hCard])
+        console.log("you lose")
+        console.log(yourHand)
+        console.log(compHand)
+    }
 
 
     console.log("human card is " + hCard)
@@ -101,37 +107,27 @@ function fire() {
     findWinner();
 
     function findWinner() {
-        if (yourHand[hCard].num > compHand[cCard].num) {
-
-            //youWin();
-            yourHand.push(compHand[cCard]),
-                compHand.splice(cCard, 1)
-                //console.log("the human number is " + yourHand[hCard].num + " the compuer hand is " + compHand[cCard].num)
-                // console.log(yourHand[hCard].num)
-                // console.log(compHand[cCard].num)
-                // console.log("win")
+        if (yourHand[hCard].num === compHand[cCard].num) {
+            console.log("tie")
         }
         else if (yourHand[hCard].num < compHand[cCard].num) {
-            //youLose();
-            compHand.push(yourHand[hCard])
-            yourHand.splice(hCard, 1)
-                // console.log(yourHand[hCard].num)
-                // console.log(compHand[cCard].num)
-                // //console.log("the human number is " + yourHand[hCard].num + " the compuer hand is " + compHand[cCard].num)
-                // console.log("lose")
+            lose()
         }
         else {
+            win()
             //youTied();
             //console.log("the human number is " + yourHand[hCard].num + " the compuer hand is " + compHand[cCard].num)
             // console.log(yourHand[hCard].num)
             // console.log(compHand[cCard].num)
-            console.log("tie")
+            
         }
         //console.log(yourHand)
         //console.log(compHand)
 
-        document.getElementById("your-hand").innerHTML = "<p>You have " + yourHand.length + " cards in your hand</p><p style='font-size: 30px'>" + yourHand[hCard].num + "</p><img src='" + yourHand[hCard].suit + ".png' width='20px'>";
-        document.getElementById("comp-hand").innerHTML = "<p>The computer has " + compHand.length + "cards in its hand</p><p style='font-size: 30px'>" + compHand[cCard].num + "</p><img src='" + compHand[cCard].suit + ".png' width='20px'>";
+        document.getElementById("your-hand").innerHTML = "<p>You have " + yourHand.length + " cards in your hand</p>";
+        document.getElementById("your-hand-card").innerHTML = "<p style='font-size: 30px'>" + yourHand[hCard].num + "</p><img src='" + yourHand[hCard].suit + ".png' width='20px'>";
+        document.getElementById("comp-hand").innerHTML = "<p>The computer has " + compHand.length + "cards in its hand</p>";
+        document.getElementById("comp-hand-card").innerHTML = "<p style='font-size: 30px'>" + compHand[cCard].num + "</p><img src='" + compHand[cCard].suit + ".png' width='20px'>";
     }
 
 
