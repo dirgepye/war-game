@@ -1,0 +1,65 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0; }
+
+html {
+  box-sizing: border-box; }
+
+.card {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  justify-content: space-around;
+  border: 1px solid #ddd;
+  width: 200px;
+  height: 325px;
+  border-radius: 10px;
+  padding: 8px; }
+
+.inner-card {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  width: 175px;
+  margin: auto;
+  height: 300px; }
+  .inner-card img {
+    margin: auto; }
+
+.column {
+  width: 30%;
+  height: 100%;
+  display: inline-block;
+  border: 1px solid black; }
+
+.flipped {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  align-self: flex-end;
+  height: 50px;
+  float: right;
+  -moz-transform: rotate(-180deg);
+  /* Firefox */
+  -webkit-transform: rotate(-180deg);
+  /* Webkit */
+  -ms-transform: rotate(-180deg);
+  /* IE */
+  -o-transform: rotate(-180deg);
+  /* Opera */
+  transform: rotate(-180deg);
+  /* future */ }
+
+/*# sourceMappingURL=style.css.map */

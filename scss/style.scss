@@ -1,0 +1,96 @@
+@mixin flex {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex-row {
+    -webkit-flex-direction: row;
+    flex-direction: row;    
+}
+
+@mixin flex-column {
+    -webkit-flex-direction: column;
+    flex-direction: column;    
+}
+
+@mixin flex-row-reverse {
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;    
+}
+
+@mixin flex-column-reverse {
+    -webkit-flex-direction: column-reverse;
+    flex-direction: column-reverse;    
+}
+
+
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+.card {
+    @include flex;
+    @include flex-row;
+    justify-content: space-around;
+    border: 1px solid #ddd;
+    width: 200px;
+    height: 325px;
+    border-radius: 10px;
+    padding: 8px;
+    //position: relative;
+    
+    
+    
+}
+
+.inner-card {
+    @include flex;
+    
+    width: 175px;
+    margin: auto;
+    height: 300px;
+    
+    img {
+        margin: auto;
+    }
+    
+
+}
+
+.suit {
+    
+}
+
+
+.column {
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.flipped {
+    @include flex;
+    @include flex-column;
+    align-self: flex-end;
+    height: 50px;
+    float: right;
+    -moz-transform:rotate(-180deg); /* Firefox */
+    -webkit-transform:rotate(-180deg); /* Webkit */        
+    -ms-transform:rotate(-180deg); /* IE */
+    -o-transform:rotate(-180deg); /* Opera */
+    transform:rotate(-180deg); /* future */
+    //position:absolute;
+    
+}

@@ -4,26 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <title>War!</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
 <body>
     <button id="deal" onclick="deal()">Deal</button>
     <button id="fire" onclick="fire()">Fire</button>
-    <div class="space human">
-        <div id="your-hand">
+    <div id="table">
+        <div class="space human">
+            <div id="your-hand">
 
+            </div>
+            <div id="your-hand-card">
+
+            </div>
+            
         </div>
-        <div id="your-hand-card">
+        <div class="space computer">
+            <div id="comp-hand">
 
+            </div>
+            <div id="comp-hand-card">
+
+            </div>
+            
         </div>
     </div>
-    <div class="space computer">
-        <div id="comp-hand">
+    <div id="outcome">
 
-        </div>
-        <div id="comp-hand-card">
-
-        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
