@@ -8,34 +8,59 @@
 </head>
 
 <body>
-    <button id="deal" onclick="deal()">Deal</button>
-    <button id="fire" onclick="fire()">Fire</button>
-    <div id="table">
-        <div class="space human">
-            <div id="your-hand">
+    <div class="buttons">
+        <button id="deal" onclick="deal()">Deal</button>
+        <button id="fire" onclick="fire()">Fire</button>
+    </div>
+    <div class="table">
+        <div class="card-container">
+            <div class="card-space human">
+                <div id="yourHand-card">
+
+                </div>
+            </div>
+            <div id="outcome">
 
             </div>
-            <div id="your-hand-card">
-
+            <div class="card-space computer">
+                <div id="compHand-card">
+                    
+                </div>
             </div>
-            
         </div>
-        <div class="space computer">
-            <div id="comp-hand">
-
+        
+        <div class="card-counters">
+            <div id="yourHand">
+                <p>Player cards remaining <span id="yourCount" class="counter">0</span></p>
             </div>
-            <div id="comp-hand-card">
-
+            <div id="compHand">
+                <p>Computer cards remaining <span id="compCount" class="counter">0</span></p>
             </div>
-            
         </div>
     </div>
-    <div id="outcome">
-
-    </div>
-
+    
     <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.3/TweenMax.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="js/anim.js"></script>
+    <script src="js/script.js"></script>
+    <!-- <script>
+        function cardCount() {
+    
+    
+    yourHandVar.innerHTML = "<p>Player cards remaining <span class='counter'>" + yourHand.length + "</span></p>";
+    compHandVar.innerHTML = "<p>Computer cards remaining <span class='counter'>" + compHand.length + "</span></p>";
+        if ((yourHand.length) <= 24) {
+        $("yourHand-card").find("span").addClass("superdanger")
+        console.log("fdsag")
+    }
+    else if ((yourHand.length) <= 23) {
+        $("yourHand-card").find("span").addClass("superdanger")
+        console.log("argh!")
+    }
+}
+    </script> -->
 </body>
 
 </html>
